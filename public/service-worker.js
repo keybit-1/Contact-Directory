@@ -1,9 +1,9 @@
 const CACHE_NAME = 'contact-directory-cache-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/bundle.js',
-  '/style.css',
+  '/public/index.html',
+  '/public/bundle.js',
+  '/public/styles.css',
   // add other URLs you want to cache, like images, fonts, etc.
 ];
 
