@@ -59,4 +59,16 @@ async function addContact(contact) {
       request.onerror = () => reject(request.error);
     });
   }
+
+  async function updateContact(id, updatedContact) {
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction(["contacts"], "readwrite");
+      const store = transaction.objectStore("contacts");
+      const request = store.put(updatedContact, id);
+  
+      request.onsuccess = () => resolve(true);
+      request.onerror = () => reject(request.error);
+    });
+  }
+  
   
