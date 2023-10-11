@@ -71,4 +71,14 @@ async function addContact(contact) {
     });
   }
   
+  export {
+    addContact,
+    getContact,
+    getAllContacts,
+    deleteContact,
+    updateContact
+  };
+
+  
+  
   
