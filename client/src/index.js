@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
     });
   }
   
-  import { addContact, getContact, getAllContacts, deleteContact } from './db.js';
+  import { addContact, getContact, getAllContacts, deleteContact } from './db';
 
   // Notification function
 function showNotification(message, isError = false) {
