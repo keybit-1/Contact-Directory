@@ -11,6 +11,21 @@ if ('serviceWorker' in navigator) {
   
   import { addContact, getContact, getAllContacts, deleteContact } from './db.js';
 
+  // Notification function
+function showNotification(message, isError = false) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.classList.add('notification');
+    if (isError) {
+        notification.classList.add('error');
+    }
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        document.body.removeChild(notification);
+    }, 3000);
+}
+
   // UI Elements
 const contactForm = document.getElementById('contact-form');
 const contactList = document.getElementById('contact-list');
@@ -55,7 +70,7 @@ async function handleAddContact(event) {
     }
   }
 
-  
+
 async function handleContactActions(event) {
   const action = event.target.dataset.action;
   if (action === 'delete') {
